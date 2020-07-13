@@ -1,0 +1,176 @@
+{
+	"app-protocol-service-fargate": {
+		"description": "APP用户协议服务",
+		"project": "flashlight-fish",
+		"ENV": "正式-Prod",
+		"url": ""
+	},
+	"prisma-server-service-fargate": {
+		"description": "MIS&APP后端数据接入层服务",
+		"project": "prisma-server",
+		"ENV": "正式-Prod",
+		"url": ""
+	},
+	"app-website-service-fargate": {
+		"description": "学员Web端Plus项目",
+		"project": "rockfish",
+		"ENV": "正式-Prod",
+		"url": ""
+	},
+	"mis-webchat-service-fargate": {
+		"description": "MIS在线聊天服务",
+		"project": "blobfish",
+		"ENV": "正式-Prod",
+		"url": ""
+	},
+	"mis-website-service-fargate": {
+		"description": "MIS前端页面",
+		"project": "salmon",
+		"ENV": "正式-Prod",
+		"url": ""
+	},
+	"blue-tang-mis-service-fargate": {
+		"description": "MIS后端服务",
+		"project": "blue-tang",
+		"ENV": "正式-Prod",
+		"url": ""
+	},
+	"blue-tang-rsmq-service-fargate": {
+		"description": "MIS&APP后端消息队列服务",
+		"project": "blue-tang",
+		"ENV": "正式-Prod",
+		"url": ""
+	},
+	"puffer-fish-service-fargate": {
+		"description": "学员Web端Lecture项目",
+		"project": "puffer-fish",
+		"ENV": "正式-Prod",
+		"url": ""
+	},
+	"app-h5-payment-service-fargate": {
+		"description": "APP支付服务H5页面",
+		"project": "spotted-scat",
+		"ENV": "正式-Prod",
+		"url": ""
+	},
+	"app-login-service-fargate": {
+		"description": "APP登录服务H5页面",
+		"project": "smoked-fish",
+		"ENV": "正式-Prod",
+		"url": ""
+	},
+	"blue-tang-app-service-fargate": {
+		"description": "APP后端服务",
+		"project": "blue-tang",
+		"ENV": "正式-Prod",
+		"url": ""
+	},
+	"blue-tang-rsmq-service-dev-fargate": {
+		"description": "MIS&APP后端消息队列服务",
+		"project": "blue-tang",
+		"ENV": "测试-Dev",
+		"url": ""
+	},
+	"app-login-service-staging-fargate": {
+		"description": "APP登录服务H5页面",
+		"project": "smoked-fish",
+		"ENV": "预演-Staging",
+		"url": ""
+	},
+	"prisma-server-service-dev-fargate": {
+		"description": "MIS&APP后端数据接入层服务",
+		"project": "prisma-server",
+		"ENV": "dev&staging",
+		"url": ""
+	},
+	"blue-tang-rsmq-service-staging-fargate": {
+		"description": "MIS&APP后端消息队列服务",
+		"project": "blue-tang",
+		"ENV": "预演-Staging",
+		"url": ""
+	},
+	"mis-website-service-dev-fargate": {
+		"description": "MIS前端页面",
+		"project": "salmon",
+		"ENV": "测试-Dev",
+		"url": ""
+	},
+	"app-website-service-staging-fargate": {
+		"description": "学员Web端Plus项目",
+		"project": "rockfish",
+		"ENV": "预演-Staging",
+		"url": ""
+	},
+	"mis-webchat-service-staging-fargate": {
+		"description": "MIS在线聊天服务",
+		"project": "blobfish",
+		"ENV": "预演-Staging",
+		"url": ""
+	},
+	"blue-tang-mis-service-dev-fargate": {
+		"description": "MIS后端服务",
+		"project": "blue-tang",
+		"ENV": "测试-Dev",
+		"url": ""
+	},
+	"mis-webchat-service-dev-fargate": {
+		"description": "MIS在线聊天服务",
+		"project": "blobfish",
+		"ENV": "测试-Dev",
+		"url": ""
+	},
+	"app-website-service-dev-fargate": {
+		"description": "学员Web端Plus项目",
+		"project": "rockfish",
+		"ENV": "测试-Dev",
+		"url": ""
+	},
+	"app-login-service-dev-fargate": {
+		"description": "APP登录服务H5页面",
+		"project": "smoked-fish",
+		"ENV": "测试-Dev",
+		"url": ""
+	},
+	"mis-website-service-staging-fargate": {
+		"description": "MIS前端页面",
+		"project": "salmon",
+		"ENV": "预演-Staging",
+		"url": ""
+	},
+	"app-h5-payment-service-staging-fargate": {
+		"description": "APP支付服务H5页面",
+		"project": "spotted-scat",
+		"ENV": "预演-Staging",
+		"url": ""
+	},
+	"app-protocol-service-dev-fargate": {
+		"description": "APP用户协议服务",
+		"project": "flashlight-fish",
+		"ENV": "测试-Dev",
+		"url": ""
+	},
+	"blue-tang-app-service-dev-fargate": {
+		"description": "APP后端服务",
+		"project": "blue-tang",
+		"ENV": "测试-Dev",
+		"url": ""
+	},
+	"blue-tang-mis-service-staging-fargate": {
+		"description": "MIS后端服务",
+		"project": "blue-tang",
+		"ENV": "预演-Staging",
+		"url": ""
+	},
+	"blue-tang-app-service-staging-fargate": {
+		"description": "APP后端服务",
+		"project": "blue-tang",
+		"ENV": "预演-Staging",
+		"url": ""
+	},
+	"app-h5-payment-service-dev-fargate": {
+		"description": "APP支付服务H5页面",
+		"project": "spotted-scat",
+		"ENV": "测试-Dev",
+		"url": ""
+	}
+}
