@@ -26,7 +26,7 @@ event = {  # 测试用的JSON
 
 with open("serviceDict.json", 'r', encoding='UTF-8') as f:
     dict = json.load(f)
-ec2 = boto3.client('ecs')
+ecs = boto3.client('ecs')
 prefix = 'https://cn-northwest-1.console.amazonaws.cn/ecs/home?region=cn-northwest-1#'
 # /clusters/
 # zhiwen-cluster-dev
@@ -64,7 +64,7 @@ def main(event):
         serveiceName = serveiceArn.replace('arn:aws-cn:ecs:cn-northwest-1:***:service/','')
         serviceEventsUrl = prefix + '/clusters/' + clusterName + '/services/' + serveiceName + '/events'
 
-        r_describe_services = ec2.describe_services(cluster=clusterName,services=[serveiceName])
+        r_describe_services = ecs.describe_services(cluster=clusterName,services=[serveiceName])
         # print(r_describe_services['services'][0]['events'][0]['message'])  # 输出第0条 event 的 message
         # print(r_describe_services['services'][0]['events'][0]['createdAt']) # 输出第0条 event 的 createtime，datetime.datetime类型
         interval = datetime.now(timezone.utc) - r_describe_services['services'][0]['events'][1]['createdAt']
