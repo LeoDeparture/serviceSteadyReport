@@ -10,16 +10,16 @@ event = {  # 测试用的JSON
   "id": "ad41f0b9-8090-a472-68cb-5967051ff365",
   "detail-type": "ECS Service Action",
   "source": "aws.ecs",
-  "account": "412934042350",
+  "account": "***",
   "time": "2020-07-03T07:52:27Z",
   "region": "cn-northwest-1",
   "resources": [
-    "arn:aws-cn:ecs:cn-northwest-1:412934042350:service/app-protocol-service-fargate"
+    "arn:aws-cn:ecs:cn-northwest-1:***:service/app-protocol-service-fargate"
   ],
   "detail": {
     "eventType": "INFO",
     "eventName": "SERVICE_STEADY_STATE",
-    "clusterArn": "arn:aws-cn:ecs:cn-northwest-1:412934042350:cluster/zhiwen-cluster",
+    "clusterArn": "arn:aws-cn:ecs:cn-northwest-1:***:cluster/zhiwen-cluster",
     "createdAt": "2020-07-03T07:52:27.345Z"
   }
 }
@@ -35,7 +35,7 @@ prefix = 'https://cn-northwest-1.console.amazonaws.cn/ecs/home?region=cn-northwe
 # /events
 
 def dingMessage(content):
-    botWebHook = 'https://oapi.dingtalk.com/robot/send?access_token=e4b53f173429b731446331e42c6139eb666d15319d78e4fe8bf4b6ce899e335a'
+    botWebHook = 'https://oapi.dingtalk.com/robot/send?access_token=your_token_url'
     header = {
         "Content-Type": "application/json",
         "Charset": "UTF-8"
@@ -48,7 +48,7 @@ def dingMessage(content):
         },
         "at": {
             "atMobiles": [
-                "15116926788"
+                "your_phone_num"
             ],
             "isAtAll": False
         }
@@ -60,15 +60,15 @@ def main(event):
     if event['detail']['eventName'] == 'SERVICE_STEADY_STATE':
         serveiceArn = event['resources'][0] # str.
         cluster = event['detail']['clusterArn'] # str.
-        clusterName = cluster.replace('arn:aws-cn:ecs:cn-northwest-1:412934042350:cluster/','')
-        serveiceName = serveiceArn.replace('arn:aws-cn:ecs:cn-northwest-1:412934042350:service/','')
+        clusterName = cluster.replace('arn:aws-cn:ecs:cn-northwest-1:***:cluster/','')
+        serveiceName = serveiceArn.replace('arn:aws-cn:ecs:cn-northwest-1:***:service/','')
         serviceEventsUrl = prefix + '/clusters/' + clusterName + '/services/' + serveiceName + '/events'
 
         r_describe_services = ec2.describe_services(cluster=clusterName,services=[serveiceName])
         # print(r_describe_services['services'][0]['events'][0]['message'])  # 输出第0条 event 的 message
         # print(r_describe_services['services'][0]['events'][0]['createdAt']) # 输出第0条 event 的 createtime，datetime.datetime类型
         interval = datetime.now(timezone.utc) - r_describe_services['services'][0]['events'][1]['createdAt']
-        content = '所属集群：%s\n\n服务名称：%s\n\n服务状态：运行稳定，可以测试 @15116926788\n\n[AWS控制台传送门](%s)\n\n' % (clusterName, serveiceName, serviceEventsUrl)
+        content = '所属集群：%s\n\n服务名称：%s\n\n服务状态：运行稳定，可以测试 @someone\n\n[AWS控制台传送门](%s)\n\n' % (clusterName, serveiceName, serviceEventsUrl)
     if (interval.seconds // 900) < 1:
         if serveiceName in dict.keys():
             a = '#### 部署环境: %s\n\n' % dict[serveiceName]['ENV']
